@@ -7,12 +7,9 @@ import {submitAPI} from "./api";
 
 export const initializeTimes = async () => {
   const today = new Date().toISOString().split("T")[0];
-  return await fetchAPI(today); // Await the Promise from fetchAPI
+  return await fetchAPI(today); 
 };
-/*const initializeTimes = () => {
-  const today = new Date().toISOString().split('T')[0];
-  return fetchAPI(today);
-};*/
+
 const updateTimes = (state, action) => {
 if (action.type === "UPDATE_TIMES"){
   return action.times;
@@ -61,14 +58,7 @@ const  Reservation = () => {
       dispatch({ type: "UPDATE_TIMES", times: [] });
     }
   };
-   /*const updateAvailableTime = (date) => {
-    fetchAPI(date).then(times => {
-      const newAvailableTime = times.filter(time => !reservedTime[date] || !reservedTime[date][time]);
-      dispatch({ type: "UPDATE_TIMES", times: newAvailableTime });
-    });
-  };*/
-
-  return (
+   return (
   <div>
   <h1 className='reservation'>Table Reservation</h1>
   <BookingForm

@@ -32,14 +32,10 @@ function BookingForm({availableTime, reservedTime, dispatch, submitForm, updateA
         } else {
           setDateError(null);
           updateAvailableTime(selectedDate);
-          /*const times = fetchAPI(selectedDate, '');
-          dispatch({type: "UPDATE_TIMES", times: times });
-          setResTime(times[0] || "17:00");*/
         }
     };
     const handleTimeChange = (e) => {
     setResTime(e.target.value);
-    //setResTime(selectedTime);
     };
     const handleSubmit = (e) => {
         e.preventDefault();
