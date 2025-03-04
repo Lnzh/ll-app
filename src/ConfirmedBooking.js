@@ -10,7 +10,7 @@ function Confirmation() {
     };
     return (
     <section className="form-section">
-    <h1>Booking confirmed! Thank you for your reservation! See you soon!</h1>
+    <h1>Booking confirmed! Thank you for your reservation! <br/> See you soon!</h1>
     <p>Date: {formData.date}</p>
     <p>Date: {formData.time}</p>
     <p>Number of Guests: {formData.guests}</p>

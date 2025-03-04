@@ -13,7 +13,7 @@ function Hero() {
                 <h2>Chicago</h2>
                 <p>We are family owned Mediterranean restaurant, 
                    focused on traditional on traditional recipes served with a modern twist. </p>
-                   <button onClick={handleReserveTable}>Reserve a Table</button>
+                   <button aria-label='Reserve a table' onClick={handleReserveTable}>Reserve a Table</button>
             </div>
             <div class="photo">
                 <img class='hero_image' src={heroimage} alt='Little Lemon main dish on a plate.'></img>

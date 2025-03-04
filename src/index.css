@@ -24,8 +24,8 @@ header {
  }
  nav ul {
    list-style: none;
-   display: flex;
    align-self: center;
+   display: flex;
    gap: 1rem;
    margin: 0;
    padding: 0;
@@ -42,6 +42,47 @@ header {
  nav ul li a:hover {
    text-decoration: underline;
  }
+ .open {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+.closed {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
+.mobile-menu.open {
+  display: block;
+}
+.mobile-menu li {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #444343;
+}
+.desctop-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+}
+ .nav-toggle {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+ }
+ .nav-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+.hidden {
+  display: none;
+}
+.nav-toggle.open + ul {
+  display: block;
+}
 
 /*Main page sections styling----------*/
 .main_section {
@@ -76,6 +117,35 @@ overflow: visible;
   margin-top: 5%;
   margin-bottom: 10%;
 }
+.cards {
+  display: grid;
+  grid-template-columns:auto auto auto;
+  gap: 20px;
+  text-align: left;
+  margin-top: 10%;
+}
+.card_special {
+  width: 200px;
+  background-color: #EDEFEE;
+  padding-bottom: 5%;
+  border-radius: 16px 16px 0 0;
+}
+.card_image {
+  width: 200px;
+  height:160px;
+  object-fit:cover;
+  border-radius: 16px 16px 0 0;
+}
+.title_price {
+  display:grid;
+  grid-template-columns: 70% 30%;
+  margin-top: 10%;
+  margin-bottom: 7%;
+}
+.card_text {
+  padding: 0% 7% 0% 7%;
+}
+
 
 /*Text styling ------------------------*/
 h1 {
@@ -152,6 +222,24 @@ button:hover {
 button:active {
 background-color:#495E57;
 }
+.disabled-button {
+  background-color: #8e8e8e;
+  border-radius: 16px;
+  border: #444343 solid 2px;
+  color: black;
+  padding: 10px 30px;
+  margin-top: 10%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.disabled-button:hover {
+  border: #444343 solid 2px;
+}
+.disabled-button:active {
+  background-color: #8e8e8e;
+}
 /*Form Styling ---------- */
 form {
   display: grid;
@@ -169,3 +257,38 @@ form {
  padding-top: 5%;
  justify-content: center;
 }
+ /*Media for responsive navigation bar*/
+ @media (max-width: 769px){
+  nav ul {flex-direction: column;}
+  nav li {margin-right: 0;}
+  .cards {
+    display: grid;
+    grid-template-columns:auto;}
+    .main_section {
+      padding-bottom: 5%;
+      padding-left: 5%;
+    }
+    .form-section {
+    grid-template-columns: 100%;
+    padding-left: 5%;
+    padding-right: 10%;}
+    .highlights_section {
+      grid-template-columns:100%;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin-top: 2%;
+      margin-bottom: 5%;
+    }
+    button {
+      margin-top: 2%;
+    }
+    .card_special {
+      width: 300px;
+    }
+    .card_image {
+      width: 300px;
+      height:160px;}
+ }
+ @media (max-width: 480px){
+  nav ul {align-items: center;}
+ }
